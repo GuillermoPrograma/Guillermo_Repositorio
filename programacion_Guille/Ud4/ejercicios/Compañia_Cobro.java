@@ -14,7 +14,7 @@ public class Compañia_Cobro {
 		double precio;
 		double impuestoMañana = 0.15;
 		double impuestoTarde = 0.10;
-		System.out.println("Minutos");
+		System.out.println("minutos");
 		int minutos = entrada.nextInt();
 
 		System.out.println("Es Domingo ?");
