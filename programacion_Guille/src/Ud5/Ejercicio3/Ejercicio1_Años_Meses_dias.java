@@ -19,7 +19,7 @@ public class Ejercicio1_Años_Meses_dias {
 		}
 		System.out.println("Dime el mes!!");
 		int mes = entrada.nextInt();
-		System.out.println(diasMes(mes,esbisiesto));
+		System.out.println(diasMes(mes,año));
 	}
 
 	public static boolean añoBisiesto(int año) {
@@ -34,14 +34,14 @@ public class Ejercicio1_Años_Meses_dias {
 	
 	
 
-	public static int diasMes(int mes, boolean bisiesto) {
+	public static int diasMes(int mes, int anio) {
 		int dias = 0;
 		switch (mes) {
 		case (1):
 			dias = 31;
 			break;
 		case (2):
-			if (bisiesto == true) {
+			if (añoBisiesto(anio)) {
 				dias = 29;
 			} else {
 				dias = 28;
@@ -49,24 +49,34 @@ public class Ejercicio1_Años_Meses_dias {
 			break;
 		case (3):
 			dias = 31;
+		break;
 		case (4):
 			dias = 30;
+		break;
 		case (5):
 			dias = 31;
+		break;
 		case (6):
 			dias = 30;
+		break;
 		case (7):
 			dias = 31;
+		break;
 		case (8):
 			dias = 31;
+		break;
 		case (9):
 			dias = 30;
+		break;
 		case (10):
 			dias = 31;
+		break;
 		case (11):
 			dias = 30;
+		break;
 		case (12):
 			dias = 31;
+		break;
 		default:
 			System.out.println("Mes erroneo");
 			break;
