@@ -23,7 +23,7 @@ public class Hundir_La_Flota {
 
 	public static int[][] instanciarLancha(int[][] tablero) {
 		boolean instanciado = false;
-		while (instanciado = false) {
+		while (instanciado == false) {
 			int numFilas = (int) (0 + Math.random() * (9 - 0 + 1));
 			int numColumnas = (int) (0 + Math.random() * (9 - 0 + 1));
 
@@ -37,7 +37,7 @@ public class Hundir_La_Flota {
 
 	public static int[][] instanciarBuque(int[][] tablero) {
 		boolean instanciado = false;
-		while (instanciado = false) {
+		while (instanciado == false) {
 			int numFilas = (int) (0 + Math.random() * (9 - 0 + 1));
 			int numColumnas = (int) (0 + Math.random() * (9 - 0 + 1));
 
@@ -52,7 +52,7 @@ public class Hundir_La_Flota {
 	public static int[][] instanciarAcorazado(int [][] tablero)
 	{
 		boolean instanciado = false;
-		while (instanciado = false) {
+		while (instanciado == false) {
 			int numFilas = (int) (0 + Math.random() * (9 - 0 + 1));
 			int numColumnas = (int) (0 + Math.random() * (9 - 0 + 1));
 
