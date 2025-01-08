@@ -27,9 +27,10 @@ public class Hundir_La_Flota {
 			int numFilas = (int) (0 + Math.random() * (9 - 0 + 1));
 			int numColumnas = (int) (0 + Math.random() * (9 - 0 + 1));
 
-			if (tablero[numFilas][numColumnas] == 'a')
+			if (tablero[numFilas][numColumnas] == 'a') {
 				tablero[numFilas][numColumnas] = 'L';
-			instanciado = true;
+				instanciado = true;
+			}
 		}
 
 		return tablero;
@@ -41,31 +42,56 @@ public class Hundir_La_Flota {
 			int numFilas = (int) (0 + Math.random() * (9 - 0 + 1));
 			int numColumnas = (int) (0 + Math.random() * (9 - 0 + 1));
 
-			if (tablero[numFilas][numColumnas] == 'a' && tablero[numFilas + 1][numColumnas] == 'a')
+			if (tablero[numFilas][numColumnas] == 'a' && tablero[numFilas + 1][numColumnas] == 'a' && tablero[numFilas + 2][numColumnas] == 'a') {
 				tablero[numFilas][numColumnas] = 'B';
-			tablero[numFilas + 1][numColumnas] = 'B';
-			instanciado = true;
+				tablero[numFilas + 1][numColumnas] = 'B';
+				tablero[numFilas + 2][numColumnas] = 'B';
+				instanciado = true;
+			}
 		}
 
 		return tablero;
 	}
-	public static int[][] instanciarAcorazado(int [][] tablero)
-	{
+
+	public static int[][] instanciarAcorazado(int[][] tablero) {
 		boolean instanciado = false;
 		while (instanciado == false) {
 			int numFilas = (int) (0 + Math.random() * (9 - 0 + 1));
 			int numColumnas = (int) (0 + Math.random() * (9 - 0 + 1));
 
-			if (tablero[numFilas][numColumnas] == 'a' && tablero[numFilas + 1][numColumnas] == 'a' && tablero[numFilas + 2][numColumnas] =='a')
+			if (tablero[numFilas][numColumnas] == 'a' && tablero[numFilas + 1][numColumnas] == 'a'
+					&& tablero[numFilas + 2][numColumnas] == 'a' && tablero[numFilas + 3][numColumnas] == 'a') {
 				tablero[numFilas][numColumnas] = 'B';
 				tablero[numFilas + 1][numColumnas] = 'B';
 				tablero[numFilas + 2][numColumnas] = 'B';
-			instanciado = true;
+				tablero[numFilas + 3][numColumnas] = 'B';
+				instanciado = true;
+			}
+			
 		}
+		
 
 		return tablero;
+
+	}
+	public static int[][] instanciarPoortaviones(int[][] tablero) {
+		boolean instanciado = false;
+		while (instanciado == false) {
+			int numFilas = (int) (0 + Math.random() * (9 - 0 + 1));
+			int numColumnas = (int) (0 + Math.random() * (9 - 0 + 1));
+
+			if (tablero[numFilas][numColumnas] == 'a' && tablero[numFilas + 1][numColumnas] == 'a'
+					&& tablero[numFilas + 2][numColumnas] == 'a' && tablero[numFilas + 3][numColumnas] == 'a') {
+				tablero[numFilas][numColumnas] = 'B';
+				tablero[numFilas + 1][numColumnas] = 'B';
+				tablero[numFilas + 2][numColumnas] = 'B';
+				tablero[numFilas + 3][numColumnas] = 'B';
+				instanciado = true;
+			}
+		}
 		
 		
+		return tablero;
 	}
 
 }
