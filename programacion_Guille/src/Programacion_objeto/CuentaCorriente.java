@@ -2,10 +2,10 @@ package Programacion_objeto;
 
 public class CuentaCorriente {
 
-	String dni;
-	String nombre;
-	double Saldo;
-	
+	private String dni;
+	private String nombre;
+	private double Saldo;
+	private  String nombreBanco = "Santander";
 	public CuentaCorriente(String d, double s) 
 	{
 		
@@ -42,5 +42,30 @@ public class CuentaCorriente {
 		
 		
 	}
+	public String getDni() {
+		return dni;
+	}
+	public void setDni(String dni) {
+		this.dni = dni;
+	}
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public double getSaldo() {
+		return Saldo;
+	}
+	public void setSaldo(double saldo) {
+		Saldo = saldo;
+	}
+	public  String getNombreBanco() {
+		return nombreBanco;
+	}
+	public void setNombreBanco(String nombreBanco) {
+		this.nombreBanco = nombreBanco;
+	}
+	
 	
 }
