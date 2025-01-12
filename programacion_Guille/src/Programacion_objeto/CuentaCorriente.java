@@ -5,7 +5,7 @@ public class CuentaCorriente {
 	private String dni;
 	private String nombre;
 	private double Saldo;
-	private  String nombreBanco = "Santander";
+	private static  String nombreBanco = "Santander";
 	public CuentaCorriente(String d, double s) 
 	{
 		

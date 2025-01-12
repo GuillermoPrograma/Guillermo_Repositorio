@@ -50,6 +50,7 @@ public class Hundir_La_Flota {
 			enseñarMapaUsuario(tablero);
 			intentos --;
 			System.out.println("Numero de intentos : " + intentos);
+			ganado = analizaMapa(tablero);
 		}
 		
 		if ( ganado == true) {
@@ -62,7 +63,7 @@ public class Hundir_La_Flota {
 	}
 
 	public static boolean analizaMapa(char[][] tablero) {
-		boolean ganado = true;
+		boolean ganado = false;
 		for (int i = 0; i < tablero.length; i++) {
 
 			for (int j = 0; j < tablero[i].length; j++) {
@@ -142,14 +143,14 @@ public class Hundir_La_Flota {
 
 	public static char[][] modoFacil(char[][] tablero) {
 
-		//for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 5; i++) {
 			tablero = instanciarLancha(tablero);
-		//}
-		//for (int i = 0; i < 3; i++) {
-			//tablero = instanciarBuque(tablero);
-		//}
-		//tablero = instanciarAcorazado(tablero);
-		//tablero = instanciarPoortaviones(tablero);
+		}
+		for (int i = 0; i < 3; i++) {
+		tablero = instanciarBuque(tablero);
+		}
+		tablero = instanciarAcorazado(tablero);
+		tablero = instanciarPoortaviones(tablero);
 		return tablero;
 	}
 
