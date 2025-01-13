@@ -35,45 +35,39 @@ public class Hundir_La_Flota {
 			break;
 		}
 
-		;
-
 	}
 
 	public static void IniciarJuego(char[][] tablero, int intentos) {
 
-		boolean ganado = analizaMapa(tablero);
-		
-		while (intentos > 0 || ganado == true) {
+		boolean ganado = false;
+
+		while (intentos > 0 && ganado == false) {
 			enseñarMapaAdmin(tablero);
 			enseñarMapaUsuario(tablero);
 			tablero = disparo(tablero);
 			enseñarMapaUsuario(tablero);
-			intentos --;
+			intentos--;
 			System.out.println("Numero de intentos : " + intentos);
 			ganado = analizaMapa(tablero);
 		}
-		
-		if ( ganado == true) {
-			System.out.println("HAS Ganado!!");
-		} else if (intentos == 0 && ganado == false){
-			System.out.println("Has perdidoS");
+
+		if (ganado == true) {
+			System.out.println("Has Ganado!!");
+		} else if (intentos == 0 && ganado == false) {
+			System.out.println("Has perdido");
 
 		}
 
 	}
 
 	public static boolean analizaMapa(char[][] tablero) {
-		boolean ganado = false;
+		boolean ganado = true;
 		for (int i = 0; i < tablero.length; i++) {
 
 			for (int j = 0; j < tablero[i].length; j++) {
-				if(tablero[i][j] =='A' || tablero[i][j] =='X' || tablero[i][j] =='a') 
-				{
-					ganado = true;
-				}
-				else if (tablero[i][j] == 'P' || tablero[i][j] == 'Z' || tablero[i][j] == 'B' || tablero[i][j] == 'L')
+				if (tablero[i][j] != 'A' && tablero[i][j] != 'X' && tablero[i][j] != 'a') {
 					ganado = false;
-				
+				} 
 			}
 
 		}
@@ -147,7 +141,7 @@ public class Hundir_La_Flota {
 			tablero = instanciarLancha(tablero);
 		}
 		for (int i = 0; i < 3; i++) {
-		tablero = instanciarBuque(tablero);
+			tablero = instanciarBuque(tablero);
 		}
 		tablero = instanciarAcorazado(tablero);
 		tablero = instanciarPoortaviones(tablero);
