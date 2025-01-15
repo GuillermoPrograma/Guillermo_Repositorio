@@ -14,13 +14,38 @@ public class Rectangulo {
 	 this.y2 = y2;
 	 
  }
+ public void imprimir() {
+	 
+	 System.out.println("x1 :" + this.x1);
+	 System.out.println("x2 :" + this.x2);
+	 System.out.println("y1 :" + this.y1);
+	 System.out.println("y2 :" + this.y2);
+ }
+ 
+ public int base() 
+ {
+ 	int res;
+ 	res = Math.abs(this.x2 - this.x1);
+ 	return res;
+
+ }
+ public int altura() 
+ {
+ 	int res;
+ 	res = Math.abs(this.y2 - this.y1);
+ 	return res;
+
+ }
 
 public int getX1() {
 	return x1;
 }
 
 public void setX1(int x1) {
-	this.x1 = x1;
+	if(x1 < this.x2)
+		this.x1 = x1;
+		else
+		System.out.println("Errorazo");
 }
 
 public int getX2() {
@@ -28,7 +53,10 @@ public int getX2() {
 }
 
 public void setX2(int x2) {
+	if(x2 > this.x1)
 	this.x2 = x2;
+	else
+	System.out.println("Errorazo");
 }
 
 public int getY1() {
@@ -44,7 +72,20 @@ public int getY2() {
 }
 
 public void setY2(int y2) {
-	this.y2 = y2;
+	if(y2 > this.y1)
+		this.y2 = y2;
+		else
+		System.out.println("Errorazo");
+}
+public void setXY(int X ,int Y) {
+	
+		this.x1 = X;
+		this.y1 = Y;
+}
+public void desplaza(int X, int Y) {
+	
+	
+	
 }
  
  
