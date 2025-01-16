@@ -54,5 +54,19 @@ public class Cuenta {
 				this.cantidad = 0;
 		}
 		
-	}	
+	}
+	public void transferencia(Cuenta c, double cantidad) 
+	{
+		if(this.cantidad >= cantidad) 
+		{
+			this.cantidad -= cantidad;
+			c.cantidad += cantidad;
+			
+		}
+		
+		
+	}
+	
+	
+	
 }
