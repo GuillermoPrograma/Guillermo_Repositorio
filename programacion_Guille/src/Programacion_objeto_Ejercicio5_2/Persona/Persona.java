@@ -1,4 +1,4 @@
-package Programacion_objeto_Ejercicio5_2_Persona2_4_8;
+package Programacion_objeto_Ejercicio5_2.Persona;
 
 public class Persona {
 

@@ -84,7 +84,21 @@ public void setXY(int X ,int Y) {
 }
 public void desplaza(int X, int Y) {
 	
+	this.x2 = this.x2 + X;
+	this.y2 = this.y2 + Y;
+	System.out.println("Se ha desplazado el X a :" +this.x2);
+	System.out.println("Se ha desplazado el Y a :" +this.y2);
+}
+public void area(Rectangulo r1) 
+{
 	
+	System.out.println("Área de r :" +  ((r1.base() * r1.altura())));
+	
+}
+public void Perimetro(Rectangulo r1) 
+{
+	
+	System.out.println("Perimetro de r: " + 2 * (r1.base() + r1.altura()));
 	
 }
  

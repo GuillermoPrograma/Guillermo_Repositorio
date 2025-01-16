@@ -1,4 +1,4 @@
-package Programacion_objeto;
+package Programacion_objeto_Ejercicio5_2.CuentaCorriente1;
 
 public class CuentaCorriente {
 
