@@ -6,6 +6,10 @@ public class Libro2 {
 	private String autor;
 	private int numeroPaginas;
 
+ 
+ 
+ 
+ 
 	public Libro2() {
 		this.libro = "Desconocido";
 		this.autor = "Anonimo";
@@ -74,5 +78,6 @@ public class Libro2 {
 	public void setNumeroPaginas(int numeroPaginas) {
 		this.numeroPaginas = numeroPaginas;
 	}
+	
 
 }
