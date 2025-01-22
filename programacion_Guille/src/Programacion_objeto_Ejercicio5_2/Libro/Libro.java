@@ -10,6 +10,5 @@ public class Libro {
 	public String toString() {
 		return "Libro [isbn=" + isbn + ", titulo=" + titulo + ", autor=" + autor + ", numeroPags=" + numeroPags + "]";
 	}
-	public Boolean Comparar() {}
 	
 }
