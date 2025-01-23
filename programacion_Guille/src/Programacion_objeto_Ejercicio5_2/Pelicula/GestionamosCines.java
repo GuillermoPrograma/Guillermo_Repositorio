@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class GestionamosCines {
 public static void main(String[] args) {
 	Scanner entrada = new Scanner(System.in);	
+	
+	
 	Pelicula p1 = new Pelicula("Gladiator","Aventura",160,16);
 	Pelicula p2 = new Pelicula("LaLaLand","Romántica",200,15);
 	Pelicula p3 = new Pelicula("Lo que el viento se llevó", "Clásica" , 360, 10);
@@ -23,6 +25,7 @@ public static void main(String[] args) {
 	
 	Cine c1 = new Cine("Renoir" , "Plaza Espania", Salas);
 	c1.ventaEntrada(s3);
+	System.out.println(" ");
 	for(int i = 0; i < Salas.length; i++) 
 	{
 		System.out.println(c1.Salas[i].getPeliculaenProyeccion().getNombre());

@@ -6,6 +6,9 @@ public class Pelicula {
 	private String genero;
 	private int minutosDuracion;
 	private int edadRecomendada;
+	
+	
+	//CONSTRUCTORES
 
 	public Pelicula() {
 
@@ -32,6 +35,9 @@ public class Pelicula {
 		this.edadRecomendada = edadRecomendada;
 	}
 	
+	
+	//FUNCIONES
+	
 	public boolean esAptaParaEdad(int edadEspectador)
 	{
 		boolean apta = false;
@@ -50,6 +56,8 @@ public class Pelicula {
 		return devuelvo;
 		
 	}
+	
+	//GETTERS SETTERS
 
 	public String getNombre() {
 		return nombre;

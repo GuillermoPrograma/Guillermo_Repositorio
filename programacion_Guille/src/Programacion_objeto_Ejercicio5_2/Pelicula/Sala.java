@@ -7,6 +7,9 @@ public class Sala {
 	private Pelicula peliculaenProyeccion;
 	private int[] numeroButaca;
 	private boolean[] numeroButacaLibre ;
+	
+	
+	//CONSTRUCTORES
 
 	public Sala() {
 		this.numeroSala = 0;
@@ -35,6 +38,8 @@ public class Sala {
 		this.numeroButacaLibre = new boolean[capacidadMaxima];
 		rellenoButacas();
 	}
+	
+	//FUNCIONES
 
 	public void asignarPelicula(Pelicula pelicula) {
 
@@ -79,6 +84,8 @@ public class Sala {
 		}
 
 	}
+	
+	//GETTERS Y SETTERS
 
 	public int getNumeroSala() {
 		return numeroSala;
