@@ -6,9 +6,8 @@ public class Pelicula {
 	private String genero;
 	private int minutosDuracion;
 	private int edadRecomendada;
-	
-	
-	//CONSTRUCTORES
+
+	// CONSTRUCTORES
 
 	public Pelicula() {
 
@@ -17,47 +16,42 @@ public class Pelicula {
 		this.minutosDuracion = 0;
 		this.edadRecomendada = 0;
 	}
-	
-	public Pelicula(String nombre, String genero) 
-	{
-		
+
+	public Pelicula(String nombre, String genero) {
+
 		this.nombre = nombre;
 		this.genero = genero;
-		
+
 	}
-	
-	public Pelicula(String nombre, String genero, int minutosDuracion, int edadRecomendada) 
-	{
-		
+
+	public Pelicula(String nombre, String genero, int minutosDuracion, int edadRecomendada) {
+
 		this.nombre = nombre;
 		this.genero = genero;
 		this.minutosDuracion = minutosDuracion;
 		this.edadRecomendada = edadRecomendada;
 	}
-	
-	
-	//FUNCIONES
-	
-	public boolean esAptaParaEdad(int edadEspectador)
-	{
+
+	// FUNCIONES
+
+	public boolean esAptaParaEdad(int edadEspectador) {
 		boolean apta = false;
-		if(edadEspectador >= this.edadRecomendada) 
-		apta = true;
-		
+		if (edadEspectador >= this.edadRecomendada)
+			apta = true;
+
 		return apta;
 	}
-	
-	public String obtenerDuracionEnFormato(int minutos) 
-	{
-		int horas = minutos/60;
-		int mins = minutos%60;
-		
+
+	public String obtenerDuracionEnFormato() {
+		int horas = this.minutosDuracion / 60;
+		int mins = this.minutosDuracion % 60;
+
 		String devuelvo = "la duración es de " + horas + " horas y de " + mins + " minutos.";
 		return devuelvo;
-		
+
 	}
-	
-	//GETTERS SETTERS
+
+	// GETTERS SETTERS
 
 	public String getNombre() {
 		return nombre;
@@ -90,6 +84,5 @@ public class Pelicula {
 	public void setEdadRecomendada(int edadRecomendada) {
 		this.edadRecomendada = edadRecomendada;
 	}
-	
-	
+
 }

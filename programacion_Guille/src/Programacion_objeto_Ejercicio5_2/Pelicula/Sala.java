@@ -6,16 +6,15 @@ public class Sala {
 	private int capacidadMaxima;
 	private Pelicula peliculaenProyeccion;
 	private int[] numeroButaca;
-	private boolean[] numeroButacaLibre ;
-	
-	
-	//CONSTRUCTORES
+	private boolean[] numeroButacaOcupado;
+
+	// CONSTRUCTORES
 
 	public Sala() {
 		this.numeroSala = 0;
 		this.capacidadMaxima = 0;
 		this.numeroButaca = new int[capacidadMaxima];
-		this.numeroButacaLibre = new boolean[capacidadMaxima];
+		this.numeroButacaOcupado = new boolean[capacidadMaxima];
 		rellenoButacas();
 	}
 
@@ -24,7 +23,7 @@ public class Sala {
 		this.numeroSala = numeroSala;
 		this.capacidadMaxima = capacidadMaxima;
 		this.numeroButaca = new int[capacidadMaxima];
-		this.numeroButacaLibre = new boolean[capacidadMaxima];
+		this.numeroButacaOcupado = new boolean[capacidadMaxima];
 		rellenoButacas();
 
 	}
@@ -35,11 +34,11 @@ public class Sala {
 		this.capacidadMaxima = capacidadMaxima;
 		this.peliculaenProyeccion = peliculaenProyeccion;
 		this.numeroButaca = new int[capacidadMaxima];
-		this.numeroButacaLibre = new boolean[capacidadMaxima];
+		this.numeroButacaOcupado = new boolean[capacidadMaxima];
 		rellenoButacas();
 	}
-	
-	//FUNCIONES
+
+	// FUNCIONES
 
 	public void asignarPelicula(Pelicula pelicula) {
 
@@ -48,7 +47,7 @@ public class Sala {
 
 	public boolean estaDisponible() {
 		boolean disponible = false;
-		if (this.peliculaenProyeccion != null)
+		if (this.peliculaenProyeccion == null)
 			disponible = true;
 
 		return disponible;
@@ -57,23 +56,21 @@ public class Sala {
 	public void mostrarInformacionSala() {
 		System.out.println("Numero de Sala : " + this.numeroSala);
 		System.out.println("Capacidad Máxima : " + this.capacidadMaxima);
-		if (estaDisponible() == true)
-			System.out.println("Pelicula en Ptoyección : " + this.peliculaenProyeccion);
+		if (!estaDisponible())
+			System.out.println("Pelicula en Proyección : " + this.peliculaenProyeccion.getNombre());
 	}
 
 	public int generaButaca() {
-		int numElegido = 0;
 		boolean bucle = true;
+		int numButaca = 0;
 		while (bucle == true) {
-			int numButaca = (int) (0 + Math.random() * (this.capacidadMaxima - 1 + 1));
-			if (this.numeroButacaLibre[numButaca] == false) {
-				this.numeroButacaLibre[numButaca] = true;
-				numElegido = numButaca;
+			numButaca = (int) (0 + Math.random() * (this.capacidadMaxima - 1 )+ 1);
+			if (this.numeroButacaOcupado[numButaca] == false) {
+				this.numeroButacaOcupado[numButaca] = true;
 				bucle = false;
-
 			}
 		}
-		return numeroButaca[numElegido];
+		return numeroButaca[numButaca];
 	}
 
 	private void rellenoButacas() {
@@ -84,8 +81,8 @@ public class Sala {
 		}
 
 	}
-	
-	//GETTERS Y SETTERS
+
+	// GETTERS Y SETTERS
 
 	public int getNumeroSala() {
 		return numeroSala;

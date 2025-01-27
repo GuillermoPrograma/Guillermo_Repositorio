@@ -2,9 +2,9 @@ package Programacion_objeto_Ejercicio5_2.Pelicula;
 
 public class Cine {
 
-	String nombre;
-	String ubicacion;
-	Sala[] Salas = new Sala[4];
+	private String nombre;
+	private String ubicacion;
+	private Sala[] salas;
 
 	// CONSTRUCTORES
 
@@ -23,7 +23,7 @@ public class Cine {
 
 		this.nombre = nombre;
 		this.ubicacion = ubicacion;
-		this.Salas = salas;
+		this.salas = salas;
 
 	}
 
@@ -31,34 +31,36 @@ public class Cine {
 
 	public Sala buscarSalaPorNumero(int numeroSala) {
 
-		return Salas[numeroSala - 1];
+		return salas[numeroSala - 1];
 
 	}
 
 	public void mostrarCartelera() {
-		for (int i = 0; i < Salas.length; i++) {
-			System.out.println(Salas[i].getPeliculaenProyeccion());
+		for (int i = 0; i < salas.length; i++) {
+			System.out.println(salas[i].getPeliculaenProyeccion().getNombre());
 
 		}
 
 	}
 
 	public int verificarCapacidadTotal() {
-		int CapacidadTotal = 0;
-		for (int i = 0; i < Salas.length; i++) {
-			CapacidadTotal += Salas[i].getCapacidadMaxima();
+		int capacidadTotal = 0;
+		for (int i = 0; i < salas.length; i++) {
+			capacidadTotal += salas[i].getCapacidadMaxima();
 		}
-		return CapacidadTotal;
+		return capacidadTotal;
 	}
 
-	public void ventaEntrada(Sala sala) {
+	public void ventaEntrada(int numSala) {
+		Sala sala=this.buscarSalaPorNumero(numSala);
+		
 		System.out.println("NOMBRE DEL CINE : " + this.nombre);
 		System.out.println("UBICACION DEL CINE : " + this.ubicacion);
-		System.out.println("PELICULA EN PROYECCION: " + sala.getPeliculaenProyeccion());
+		System.out.println("PELICULA EN PROYECCION: " + sala.getPeliculaenProyeccion().getNombre());
 		System.out.println("NUMERO DE SALA: " + sala.getNumeroSala());
 		System.out.println("NUMERO DE ASIENTO : " + sala.generaButaca());
-		System.out.println("DURACION PELICULA : " + sala.getPeliculaenProyeccion()
-				.obtenerDuracionEnFormato(sala.getPeliculaenProyeccion().getMinutosDuracion()));
+		System.out.println("DURACION PELICULA : " + sala.getPeliculaenProyeccion().obtenerDuracionEnFormato());
+		
 
 	}
 	
@@ -81,10 +83,10 @@ public class Cine {
 	}
 
 	public Sala[] getSalas() {
-		return Salas;
+		return salas;
 	}
 
 	public void setSalas(Sala[] salas) {
-		Salas = salas;
+		this.salas = salas;
 	}
 }
