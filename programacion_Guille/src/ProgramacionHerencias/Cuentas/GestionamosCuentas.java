@@ -1,4 +1,4 @@
-package ProgramacionHerencias;
+package ProgramacionHerencias.Cuentas;
 
 public class GestionamosCuentas {
 
