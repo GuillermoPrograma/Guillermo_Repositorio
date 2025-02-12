@@ -13,6 +13,20 @@ public class Repartidores extends Empleados {
 	}
 	
 	
+	public void Plus() 
+	{
+		
+		if(super.getEdad() < 25 && this.zona.equals("zona3")) 
+		{
+			
+			super.setSalario(this.getSalario() + this.getPLUS());
+			
+		}
+		
+		
+	}
+	
+	
 	
 
 	public String getZona() {
