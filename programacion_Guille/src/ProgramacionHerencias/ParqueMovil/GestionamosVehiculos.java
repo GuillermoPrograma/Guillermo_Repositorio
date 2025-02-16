@@ -22,5 +22,19 @@ public static void main(String[] args) {
 	System.out.println(c1.toString());
 	System.out.println(ca1.toString());
 	System.out.println(ca2.toString());
+	
+	
+	Vehiculo [] vehiculos = new Vehiculo[4];
+	
+	Empresa e1 = new Empresa(4,vehiculos,"Carlass");
+	e1.muestro();
+	e1.comprar(v1);
+	e1.comprar(c1);
+	e1.comprar(ca1);
+	e1.muestro();
+	e1.vender(ca1);
+	e1.vender(ca2);
+	e1.comprar(ca2);
+	e1.muestro();
 }
 }
