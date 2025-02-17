@@ -12,30 +12,21 @@ public class Empresa {
 		this.nombre = nombre;
 	}
 
-	public void añadimosVehiculo(Vehiculo v1) {
-		for (int i = 0; i < Flota.length; i++) {
-			if (Flota[i] == null) {
-				Flota[i] = v1;
-				System.out.println("Flota actualizada");
-			}
-
-		}
-
-	}
-
 	public void buscarVehiculo(Vehiculo v1) {
+		boolean vehiculoEncon = false;
 		for (int i = 0; i < Flota.length; i++) {
 			if (v1.equals(Flota[i])) {
 				System.out.println(v1.toString());
-			} else {
-				System.out.println("no existe vehiculo dentro de la flota");
+				vehiculoEncon = true;
 			}
-
 		}
+		if (vehiculoEncon == false)
+			System.out.println("no existe vehiculo dentro de la flota");
+
 	}
 
 	public void comprar(Vehiculo v1) {
-		boolean comprado = false;
+		 boolean comprado = false;
 		for (int i = 0; i < Flota.length; i++) {
 			if (Flota[i] == null && comprado == false) {
 				Flota[i] = v1;
@@ -47,14 +38,17 @@ public class Empresa {
 	}
 
 	public void vender(Vehiculo v1) {
+		boolean encontrado = false;
 		for (int i = 0; i < Flota.length; i++) {
-			if (Flota[i] != null &&Flota[i].equals(v1)) {
+			if (Flota[i] != null && Flota[i].equals(v1)) {
 				Flota[i] = null;
-			} else {
-				System.out.println("Vehiculo no encontrado");
+				encontrado = true;
 			}
-		}
 
+		}
+		if (encontrado == false) {
+			System.out.println("Vehiculo no encontrado");
+		}
 	}
 
 	public void muestro() {

@@ -36,5 +36,6 @@ public static void main(String[] args) {
 	e1.vender(ca2);
 	e1.comprar(ca2);
 	e1.muestro();
-}
+	e1.buscarVehiculo(ca1);
+	e1.buscarVehiculo(v1);}
 }
