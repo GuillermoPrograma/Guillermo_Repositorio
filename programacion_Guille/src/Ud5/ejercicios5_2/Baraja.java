@@ -4,7 +4,8 @@ public class Baraja {
 
 	private Carta baraja[] = new Carta[40];
 	private int numCartaActual = 0;
-	private Carta dadas[];
+	private Carta dadas[] = new Carta[40];
+	private int descartadas;
 
 	public Baraja(Carta[] baraja) {
 		this.baraja = baraja;
@@ -36,12 +37,19 @@ public class Baraja {
 		if (numCartaActual <= 40) {
 			System.out.println(baraja[numCartaActual].toString());
 			baraja[numCartaActual] = null;
+			descartadas =+ 1;
 			numCartaActual = +1;
 		} else
 			System.out.println("No quedan cartas disponibles");
 	}
 
 	public void cartasDisponibles() {
+		int disponibles;
+		boolean contado = false;
+		while (contado =true)
+		{
+			for(int i = 0; i)
+		}
 		System.out.println("Quedan disponibles : " + (baraja.length - numCartaActual) + " Cartas.");
 	}
 
