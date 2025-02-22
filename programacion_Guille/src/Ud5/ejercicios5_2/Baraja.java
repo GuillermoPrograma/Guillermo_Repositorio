@@ -59,7 +59,7 @@ public class Baraja {
 			
 			baraja2[aleatorio] = dadas[i];
 			
-		}
+		}//ss
 		this.dadas = baraja2;
 		numCartaActual = 0;
 	}
