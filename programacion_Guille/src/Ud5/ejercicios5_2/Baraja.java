@@ -53,11 +53,12 @@ public class Baraja {
 		Carta baraja2[] = new Carta[40];
 		for (int i = 0; i < dadas.length; i++) {
 
-			aleatorio = (int) (Math.random() * (40 + 1));
+			aleatorio = (int) (Math.random() * (39 + 1));
 			while (baraja2[aleatorio] != null)
-				aleatorio = (int) (Math.random() * (40 + 1));
-
-			dadas[i] = baraja2[aleatorio];
+				aleatorio = (int) (Math.random() * (39 + 1));
+			
+			baraja2[aleatorio] = dadas[i];
+			
 		}
 		this.dadas = baraja2;
 		numCartaActual = 0;
@@ -87,7 +88,7 @@ public class Baraja {
 
 	public void MostrarBaraja() {
 
-		for (int i = numCartaActual; i < dadas.length; i++) {
+		for (int i = 0; i < dadas.length; i++) {
 			if(dadas[i] != null)
 			System.out.println(dadas[i]);
 
