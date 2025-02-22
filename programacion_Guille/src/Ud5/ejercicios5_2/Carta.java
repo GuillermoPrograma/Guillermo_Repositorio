@@ -24,6 +24,11 @@ public class Carta {
 	public static int getNumCarta() {
 		return numCarta;
 	}
+
+	@Override
+	public String toString() {
+		return "Carta [num=" + num + ", palo=" + palo + "]";
+	}
 	
 	
 	
