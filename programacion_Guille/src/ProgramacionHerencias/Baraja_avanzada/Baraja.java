@@ -1,4 +1,4 @@
-package Ud5.ejercicios5_2;
+package ProgramacionHerencias.Baraja_avanzada;
 
 public class Baraja {
 	
@@ -7,46 +7,14 @@ public class Baraja {
 	private int descartadas;
 	private Carta monton[] = new Carta[40];
 	private int contadorMonton = 0;
-
+	private int numCartasTotal;
+	private int numCartasPalo;
 	public Baraja() {
 
-		crearBaraja();
+		
 	}
 
-	private void crearBaraja() {
-
-		for (int i = 0; i <= 3; i++) {
-			for (int j = 0; j <= 9; j++) {
-				if (i == 0) {
-					if (j > 6) {
-						dadas[Carta.getNumCarta()] = new Carta(j + 3, PalosBarEspaniola.Bastos);
-					} else
-						dadas[Carta.getNumCarta()] = new Carta(j + 1, PalosBarEspaniola.Bastos);
-				}
-				if (i == 1) {
-					if (j > 6) {
-						dadas[Carta.getNumCarta()] = new Carta(j + 3, PalosBarEspaniola.Copas);
-					} else
-						dadas[Carta.getNumCarta()] = new Carta(j + 1, PalosBarEspaniola.Copas);
-				}
-				if (i == 2) {
-					if (j > 6) {
-						dadas[Carta.getNumCarta()] = new Carta(j + 3, PalosBarEspaniola.Espadas);
-					} else
-						dadas[Carta.getNumCarta()] = new Carta(j + 1, PalosBarEspaniola.Espadas);
-				}
-				if (i == 3) {
-					if (j > 6) {
-						dadas[Carta.getNumCarta()] = new Carta(j + 3, PalosBarEspaniola.Oros);
-					} else
-						dadas[Carta.getNumCarta()] = new Carta(j + 1, PalosBarEspaniola.Oros);
-				}
-
-			}
-
-		}
-
-	}
+	
 
 	public void barajar() {
 		int aleatorio;

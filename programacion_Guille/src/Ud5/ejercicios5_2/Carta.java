@@ -3,10 +3,10 @@ package Ud5.ejercicios5_2;
 public class Carta {
 
 	private int num;
-	private Palos palo;
+	private PalosBarEspaniola palo;
 	private static int numCarta = 0;
 	
-	public Carta(int num, Palos palo) 
+	public Carta(int num, PalosBarEspaniola palo) 
 	{
 		this.num = num;
 		this.palo = palo;
@@ -17,7 +17,7 @@ public class Carta {
 		return num;
 	}
 
-	public Palos getPalo() {
+	public PalosBarEspaniola getPalo() {
 		return palo;
 	}
 
