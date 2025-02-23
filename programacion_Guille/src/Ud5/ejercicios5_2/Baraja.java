@@ -37,9 +37,9 @@ public class Baraja {
 				}
 				if (i == 3) {
 					if (j > 6) {
-						dadas[Carta.getNumCarta()] = new Carta(j + 3, Palos.Sotas);
+						dadas[Carta.getNumCarta()] = new Carta(j + 3, Palos.Oros);
 					} else
-						dadas[Carta.getNumCarta()] = new Carta(j + 1, Palos.Sotas);
+						dadas[Carta.getNumCarta()] = new Carta(j + 1, Palos.Oros);
 				}
 
 			}
@@ -84,6 +84,7 @@ public class Baraja {
 		for (int i = 0; i < dadas.length; i++) {
 			if (dadas[i] != null)
 				disponibles += 1;
+			
 		}
 		return disponibles;
 
@@ -93,12 +94,14 @@ public class Baraja {
 		Carta[] devueltas = new Carta[num];
 		int disponibles = cartasDisponibles();
 		int contador = 0;
-		if (disponibles > num) {
-			for (int i = numCartaActual; i < numCartaActual + num; i++) {
+		if (disponibles >= num) {
+			int numCartaArray = numCartaActual;
+			for (int i = numCartaActual; i <  numCartaArray + num ; i++) {
 				if (dadas[i] != null) {
 					devueltas[contador] =dadas[i];
 					monton[contadorMonton] =dadas[i];
 					dadas[i] = null;
+					contador++;
 					numCartaActual ++;
 					descartadas ++;
 					contadorMonton++;}

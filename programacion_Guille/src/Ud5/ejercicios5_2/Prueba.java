@@ -7,8 +7,8 @@ public class Prueba {
 		
 		
 		baraja1.siguiente_carta();
-		baraja1.darCartas(10);
-		baraja1.mostrarMonton();
+		baraja1.darCartas(30);
+		baraja1.mostrarBaraja();
 	
 	}
 }
