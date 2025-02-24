@@ -50,6 +50,11 @@ public class Carta {
 	public void setPaloFrances(PalosBarFrancesa paloFrances) {
 		this.paloFrances = paloFrances;
 	}
+	public String AsignacionCartas() 
+	{
+		
+		
+	}
 
 	@Override
 	public String toString() {
