@@ -1,5 +1,5 @@
 package ProgramacionHerencias.Baraja_avanzada;
 
 public enum PalosBarEspaniola {
-Espadas,Bastos,Oros,Copas
+Espadas,Bastos,Oros,Copas,nulo
 }

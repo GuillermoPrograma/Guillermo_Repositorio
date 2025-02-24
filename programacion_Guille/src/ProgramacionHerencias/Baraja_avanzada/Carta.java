@@ -10,6 +10,7 @@ public class Carta {
 	{
 		this.num = num;
 		this.paloEspaniol = espaniol;
+		this.paloFrances = PalosBarFrancesa.nulo;
 		numCarta++;
 	}
 	
@@ -17,6 +18,7 @@ public class Carta {
 	{
 		this.num = num;
 		this.paloFrances = frances;
+		this.paloEspaniol = PalosBarEspaniola.nulo;
 		numCarta++;
 	}
 
@@ -31,10 +33,30 @@ public class Carta {
 	public static int getNumCarta() {
 		return numCarta;
 	}
+	
+
+	public PalosBarEspaniola getPaloEspaniol() {
+		return paloEspaniol;
+	}
+
+	public void setPaloEspaniol(PalosBarEspaniola paloEspaniol) {
+		this.paloEspaniol = paloEspaniol;
+	}
+
+	public PalosBarFrancesa getPaloFrances() {
+		return paloFrances;
+	}
+
+	public void setPaloFrances(PalosBarFrancesa paloFrances) {
+		this.paloFrances = paloFrances;
+	}
 
 	@Override
 	public String toString() {
+		if(this.paloFrances == PalosBarFrancesa.nulo)
 		return "Carta [num=" + num + ", palo=" + paloEspaniol + "]";
+		else
+			return "Carta [num=" + num + ", palo=" + paloFrances + "]";
 	}
 	
 	

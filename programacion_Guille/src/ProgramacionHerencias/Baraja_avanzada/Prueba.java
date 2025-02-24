@@ -3,12 +3,10 @@ package ProgramacionHerencias.Baraja_avanzada;
 public class Prueba {
 
 	 public static void main(String[] args) {
-		Baraja baraja1 = new Baraja();
+		Baraja baraja1 = new BarajaEspaniola(true);
 		
 		
-		baraja1.siguiente_carta();
-		baraja1.darCartas(30);
-		baraja1.mostrarBaraja();
+		baraja1.barajar();
 	
 	}
 }
