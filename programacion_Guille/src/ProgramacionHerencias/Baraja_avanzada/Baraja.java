@@ -16,8 +16,8 @@ public abstract class Baraja {
 	
 	public abstract void crearBaraja();
 
-	private Carta monton[] = new Carta[numCartasTotal];
-	private Carta dadas[] = new Carta[numCartasTotal];
+	private Carta monton[];
+	private Carta dadas[];
 
 	public void barajar() {
 		int aleatorio;

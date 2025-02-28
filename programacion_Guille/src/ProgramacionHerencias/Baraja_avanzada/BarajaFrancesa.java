@@ -5,41 +5,38 @@ public class BarajaFrancesa extends Baraja {
 
 	public BarajaFrancesa() {
 		super(52);
-
+		crearBaraja();
 	}
 
 	public void crearBaraja() {
-		
+		Carta Monton[] = new Carta[52];
 		 Carta dadaFrancesa[] = new Carta[52];
-		
-		for (int i = 0; i <= 3; i++) {
-			for (int j = 0; j <= 9; j++) {
+		int contador = 0;
+		for (int i = 0; i <= 3; i++) { 
+			for (int j = 0; j < 13; j++) { //está mal el Carta.getNumCarta porque es un statico y al hacer dos barajas empiezo con errores del lenght
 				if (i == 0) {
-					if (j > 6) {
-						dadaFrancesa[Carta.getNumCarta()] = new Carta(j + 3, PalosBarFrancesa.Corazones);
-					} else
-						dadaFrancesa[Carta.getNumCarta()] = new Carta(j + 1, PalosBarFrancesa.Corazones);
+					
+						dadaFrancesa[contador] = new Carta(j + 1, PalosBarFrancesa.Corazones);
+						contador++;
 				}
 				if (i == 1) {
-					if (j > 6) {
-						dadaFrancesa[Carta.getNumCarta()] = new Carta(j + 3, PalosBarFrancesa.Diamantes);
-					} else
-						dadaFrancesa[Carta.getNumCarta()] = new Carta(j + 1, PalosBarFrancesa.Diamantes);
+					
+						dadaFrancesa[contador] = new Carta(j + 1, PalosBarFrancesa.Diamantes);
+						contador++;
 				}
 				if (i == 2) {
-					if (j > 6) {
-						dadaFrancesa[Carta.getNumCarta()] = new Carta(j + 3, PalosBarFrancesa.Picas);
-					} else
-						dadaFrancesa[Carta.getNumCarta()] = new Carta(j + 1, PalosBarFrancesa.Picas);
+					
+						dadaFrancesa[contador] = new Carta(j + 1, PalosBarFrancesa.Picas);
+						contador++;
 				}
 				if (i == 3) {
-					if (j > 6) {
-						dadaFrancesa[Carta.getNumCarta()] = new Carta(j + 3, PalosBarFrancesa.Treboles);
-					} else
-						dadaFrancesa[Carta.getNumCarta()] = new Carta(j + 1, PalosBarFrancesa.Treboles);
+					
+						dadaFrancesa[contador] = new Carta(j + 1, PalosBarFrancesa.Treboles);
+						contador++;
 				}
 
 			}
+			this.setMonton(Monton);
 			this.setDadas(dadaFrancesa);}
 	}
 	
