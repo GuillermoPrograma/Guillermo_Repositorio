@@ -13,8 +13,6 @@ public class Ejercicio1_PruebaNext {
 			int nums = entrada.nextInt();
 		} catch (InputMismatchException e) {
 			System.out.println("Solo puede ser valor ");
-
 		}
 	}
-
 }
