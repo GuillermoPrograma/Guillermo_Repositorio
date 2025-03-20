@@ -1,0 +1,46 @@
+package Ud9.Excepciones.Ejercicio3;
+import Ud9.Excepciones.CuentasBancarias.Competidor;
+
+public abstract class Jugadores implements Competidor {
+
+	private Nivel nivel;
+	private int edad;
+	private int puntos;
+	
+	public void GanarPuntos(int puntosNuevos) 
+	{
+		
+		this.puntos += puntosNuevos;
+	}
+
+	public Nivel getNivel() {
+		return nivel;
+	}
+
+	public void setNivel(Nivel nivel) {
+		this.nivel = nivel;
+	}
+
+	public int getEdad() {
+		return edad;
+	}
+
+	public void setEdad(int edad) {
+		this.edad = edad;
+	}
+
+	public int getPuntos() {
+		return puntos;
+	}
+
+	public void setPuntos(int puntos) {
+		this.puntos = puntos;
+	}
+
+	@Override
+	public String toString() {
+		return "Jugadores [nivel=" + nivel + ", edad=" + edad + ", puntos=" + puntos + "]";
+	}
+	
+	
+}

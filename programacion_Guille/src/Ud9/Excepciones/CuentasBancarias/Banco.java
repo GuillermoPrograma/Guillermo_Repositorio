@@ -4,7 +4,12 @@ public class Banco {
 
 	private CuentasBancarias cuentas[] = new CuentasBancarias[5];
 
-	public void retirarDinero(CuentasBancarias c, double retirar) {
+	public Banco(CuentasBancarias[] cuentas) 
+	{
+		this.cuentas = cuentas;
+		
+	}
+	public void retirarDinero(CuentasBancarias c, double retirar) throws saldoInsuficienteExcepcion {
 
 		for (int i = 0; i < cuentas.length; i++) {
 
@@ -12,7 +17,7 @@ public class Banco {
 				if(cuentas[i].getCuenta() > retirar)
 				cuentas[i].setCuenta(cuentas[i].getCuenta() - retirar);
 				else
-					throw 
+					throw new saldoInsuficienteExcepcion("Saldo Insuficiente");
 			}
 
 		}

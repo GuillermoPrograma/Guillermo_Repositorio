@@ -4,6 +4,14 @@ public class CuentasBancarias {
 
 	private String nombre;
 	private double cuenta;
+	public CuentasBancarias(String nombre , double cuenta)
+	{
+		this.nombre = nombre;
+		this.cuenta = cuenta;
+		
+		
+	}
+	
 	public String getNombre() {
 		return nombre;
 	}
