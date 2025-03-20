@@ -1,5 +1,4 @@
 package Ud9.Excepciones.Ejercicio3;
-import Ud9.Excepciones.CuentasBancarias.Competidor;
 
 public abstract class Jugadores implements Competidor {
 
