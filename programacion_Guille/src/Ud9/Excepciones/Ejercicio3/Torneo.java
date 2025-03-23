@@ -7,17 +7,17 @@ public class Torneo {
 	int contador = 0;
 	Jugadores jugadoresInscritos[] = new Jugadores[10];
 
-	public Torneo(String nombre, Nivel nivel, Jugadores[] jugadoresInscritos) {
+	public Torneo(String nombre, Nivel nivel) {
 		this.nombre = nombre;
 		this.nivel = nivel;
-		this.jugadoresInscritos = jugadoresInscritos;
 	}
 
-	public void AgregarJugadores(Jugadores j) throws EdadInvalidaException, TorneoIvalidoException, PuntosInvalidosException {
+	public void AgregarJugadores(Jugadores j)
+			throws EdadInvalidaException, TorneoIvalidoException, PuntosInvalidosException {
 		if (j.getNivel() == Nivel.juvenil && j.getEdad() >= 12 && j.getEdad() <= 17 && this.nivel == Nivel.juvenil
 				|| j.getEdad() >= 18 && j.getNivel() == Nivel.profesional && j.getPuntos() >= 200
 						&& this.nivel == Nivel.profesional) {
-			if (contador < 10) {
+			if (contador < jugadoresInscritos.length) {
 				jugadoresInscritos[contador] = j;
 				contador++;
 			}
@@ -25,17 +25,22 @@ public class Torneo {
 				|| j.getNivel() == Nivel.juvenil && j.getEdad() < 12
 				|| j.getNivel() == Nivel.juvenil && j.getEdad() > 18) {
 			throw new EdadInvalidaException("Edad inválida");
-		} else if (j.getNivel() != this.nivel) 
-		{
+		} else if (j.getNivel() != this.nivel) {
 			throw new TorneoIvalidoException("El Nivel del jugador no es apto para este torneo");
-		}
-		else if (j.getNivel() == Nivel.profesional && j.getPuntos() < 200) 
-		{
+		} else if (j.getNivel() == Nivel.profesional && j.getPuntos() < 200) {
 			throw new PuntosInvalidosException("Los puntos son insuficientes");
 		}
 	}
 
 	public void RegistrarResultados(Jugadores j, int resultados) {
-		j.setPuntos(j.getPuntos() + resultados);
+		for (int i = 0; i < jugadoresInscritos.length; i++) {
+			if (jugadoresInscritos[i] != null) {
+				if (jugadoresInscritos[i].equals(j)) {
+					j.setPuntos(j.getPuntos() + resultados);
+				}
+			}
+
+		}
+
 	}
 }
