@@ -7,7 +7,7 @@ public abstract class Jugadores implements Competidor {
 	private int puntos;
 
 	public Jugadores(int edad, int puntos, Nivel nivel) {
-		
+
 		this.edad = edad;
 		this.puntos = puntos;
 		this.nivel = nivel;
@@ -18,8 +18,6 @@ public abstract class Jugadores implements Competidor {
 
 		this.puntos += puntosNuevos;
 	}
-
-	
 
 	public void competir(Torneo torneo, int resultado) {
 		torneo.registrarResultados(this, resultado);

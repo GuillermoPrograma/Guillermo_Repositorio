@@ -19,24 +19,25 @@ public class Torneo {
 				jugadoresInscritos[contador] = j;
 				contador++;
 			}
-		} else if (j.getEdad() < 12 ||  j.getEdad() > 18) {
+		} else if (j.getEdad() < 12 || j.getEdad() > 18) {
 			throw new EdadInvalidaException("Edad inválida");
 		} else if (j.getNivel() != this.nivel) {
 			throw new TorneoIvalidoException("El Nivel del jugador no es apto para este torneo");
 		}
 	}
+
 	public void agregarJugadores(Jugadores j, int puntos)
 			throws EdadInvalidaException, TorneoIvalidoException, PuntosInvalidosException {
-		if ( j.getEdad() >= 18  && j.getPuntos() >= 200) {
+		if (j.getEdad() >= 18 && j.getPuntos() >= 200) {
 			if (contador < jugadoresInscritos.length) {
 				jugadoresInscritos[contador] = j;
 				contador++;
 			}
-		} else if (j.getEdad() < 18 ) {
+		} else if (j.getEdad() < 18) {
 			throw new EdadInvalidaException("Edad inválida");
 		} else if (j.getNivel() != this.nivel) {
 			throw new TorneoIvalidoException("El Nivel del jugador no es apto para este torneo");
-		} else if ( j.getPuntos() < 200) {
+		} else if (j.getPuntos() < 200) {
 			throw new PuntosInvalidosException("Los puntos son insuficientes");
 		}
 	}
@@ -47,7 +48,7 @@ public class Torneo {
 				if (jugadoresInscritos[i].equals(j)) {
 					j.setPuntos(j.getPuntos() + resultados);
 				}
-				
+
 			}
 
 		}
