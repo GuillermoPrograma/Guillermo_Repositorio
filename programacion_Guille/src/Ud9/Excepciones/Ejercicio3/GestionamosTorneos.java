@@ -14,7 +14,7 @@ public class GestionamosTorneos {
 		try {
 			jugador1.inscribirseEnTorneo(torneoPro);
 			jugador2.inscribirseEnTorneo(torneoJuv);
-			// jugadorNulo2.inscribirseEnTorneo(torneoPro);
+			//jugadorNulo2.inscribirseEnTorneo(torneoPro);
 			// jugadorNulo.inscribirseEnTorneo(torneoJuv);
 		} catch (EdadInvalidaException | TorneoIvalidoException | PuntosInvalidosException e) {
 			// TODO Auto-generated catch block
