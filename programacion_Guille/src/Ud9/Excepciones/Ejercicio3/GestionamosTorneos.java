@@ -12,7 +12,7 @@ public class GestionamosTorneos {
 		Torneo torneoPro = new Torneo("Profesional",Nivel.profesional);
 		Torneo torneoJuv = new Torneo("Juvenil", Nivel.juvenil);
 
-		torneoPro.AgregarJugadores(jugador1);
+		jugador1.competir(torneoJuv, 200); //mirar este segundo paámetro 
 		//torneoPro.AgregarJugadores(jugadorNulo); 
 		torneoJuv.AgregarJugadores(jugador2);
 		torneoJuv.RegistrarResultados(jugador2, 200);
