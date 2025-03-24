@@ -1,23 +1,31 @@
 package Ud9.Excepciones.Ejercicio3;
 
 public class GestionamosTorneos {
-	public static void main(String[] args) throws EdadInvalidaException, TorneoIvalidoException, PuntosInvalidosException {
+	public static void main(String[] args) {
 	
-		Jugadores jugador1 = new Jugadores( 20,  600, Nivel.profesional);
-		Jugadores jugador2 = new Jugadores(15, 200, Nivel.juvenil);
-		Jugadores jugadorNulo = new Jugadores (11, 200, Nivel.juvenil);
-		Jugadores jugadorNulo2 = new Jugadores(20, 100, Nivel.profesional);
+		Profesionales jugador1 = new Profesionales( 20,  600);
+		Juvenil jugador2 = new Juvenil(15, 200);
+		Juvenil jugadorNulo = new Juvenil (11, 200);
+		Profesionales jugadorNulo2 = new Profesionales(20, 100);
 
 
 		Torneo torneoPro = new Torneo("Profesional",Nivel.profesional);
 		Torneo torneoJuv = new Torneo("Juvenil", Nivel.juvenil);
 
-		jugador1.competir(torneoJuv, 200); //mirar este segundo paámetro 
-		//torneoPro.AgregarJugadores(jugadorNulo); 
-		torneoJuv.AgregarJugadores(jugador2);
-		torneoJuv.RegistrarResultados(jugador2, 200);
-		//torneoJuv.AgregarJugadores(jugadorNulo2);
+		try {
+			jugador1.inscribirseEnTorneo(torneoPro);
+			jugador2.inscribirseEnTorneo(torneoJuv);
+			//jugadorNulo2.inscribirseEnTorneo(torneoPro);
+			//jugadorNulo.inscribirseEnTorneo(torneoJuv);
+		} catch (EdadInvalidaException | TorneoIvalidoException | PuntosInvalidosException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		
+		jugador2.competir(torneoJuv, 200);
+		
 		System.out.println(jugador2.getPuntos());
+		System.out.println(jugador1.getPuntos());
 	}
  
 }
