@@ -1,18 +1,33 @@
 package Ud10.colecciones;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Ejercicio1 {
 	public static void main(String[] args) {
 
+		Scanner entrada = new Scanner(System.in);
+
 		ArrayList<Integer> lista = new ArrayList<>();
-		for (int i = 0; i <= 4; i++)
-			lista.add((int) (1 + Math.random() * (10 - 1 + 1)));
 
-		while (lista.contains(5)) {
-			lista.remove(new Integer(5));
+		int valor;
+		while ((valor=entrada.nextInt()) != -1) {
+			if(valor > 0)
+			lista.add(valor);
 		}
-		System.out.println(lista);
-	}
+		if (valor == -1) {
 
+			for (int i = 0; i < lista.size(); i++) {
+				if (lista.get(i) % 2 == 0) {
+					System.out.println(lista.get(i));
+				}
+				if (lista.get(i) % 3 == 0) {
+					lista.remove(i);
+				}
+
+			}
+			System.out.println(lista);
+		}
+
+	}
 }
