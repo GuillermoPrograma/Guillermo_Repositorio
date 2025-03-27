@@ -1,16 +1,17 @@
 package Ud10.colecciones;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Ejercicio3 {
 
 	public static void main(String[] args) {
-		ArrayList<Integer> lista = new ArrayList<>();
+		List<Integer> lista = new ArrayList<>();
 		
 		for (int i = 0; i <= 10; i++)
 			lista.add((int) (1 + Math.random() * (10 - 1 + 1)));
 		
-		ArrayList<Integer> lista2 = new ArrayList<>();
+		List<Integer> lista2 = new ArrayList<>();
 		
 		
 		for(int i = 0; i < lista.size(); i++) 

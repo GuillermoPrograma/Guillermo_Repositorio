@@ -12,7 +12,7 @@ public class Ejercicio2 {
 		while (lista.contains(5)) {
 			lista.remove(Integer.valueOf(5));
 		}
-		System.out.println(lista);
+		System.out.println(lista); 
 	}
 
 }

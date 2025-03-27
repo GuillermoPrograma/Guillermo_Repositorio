@@ -31,17 +31,17 @@ public class Juego {
 		return fin;
 	}
 
-	public void ronda() {
-		while(contador < 3) 
-		{
-			if (jugadores[i].isVivo() == true)
-				System.out.println("El jugador esta vivo");
-			else
-				System.out.println("El jugador ha muerto");
-			
-		}
+//	public void ronda() {
+//		while(contador < 3) 
+//		{
+//			if (jugadores[i].isVivo() == true)
+//				System.out.println("El jugador esta vivo");
+//			else
+//				System.out.println("El jugador ha muerto");
+//			
+//		}
 
 			
-		}
-	}
+//}
+	
 }
