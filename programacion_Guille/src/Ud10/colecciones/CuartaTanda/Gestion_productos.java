@@ -22,9 +22,8 @@ public class Gestion_productos {
 	}
 
 	Producto obtener(int cod) {
-		for(Producto p: lista) 
-		{
-			if(p.getCodigo() == cod)
+		for (Producto p : lista) {
+			if (p.getCodigo() == cod)
 				return p;
 		}
 		return null;
@@ -59,20 +58,19 @@ public class Gestion_productos {
 	void agregarSinDuplicados(Producto p1) throws DatosExcepcion {
 		for (Producto p2 : lista) {
 			if (p1.getCodigo() == p2.getCodigo()) {
-				if (!p1.getNombre().equals(p2.getNombre())
-					&& !p1.getTipo().equals(p2.getTipo()))
+				if (!p1.getNombre().equals(p2.getNombre()) && !p1.getTipo().equals(p2.getTipo()))
 					throw new DatosExcepcion("producto erroneo");
-				
+
 				else if (p1.getCodigo() == p2.getCodigo() && p1.getPrecio() != p2.getPrecio()) {
 					p2.setPrecio(p1.getPrecio());
-					p2.setStock(p2.getStock()+p1.getStock());
-					
+					p2.setStock(p2.getStock() + p1.getStock());
+
 				} else if (p1.getCodigo() == p2.getCodigo() && p1.getNombre().equals(p2.getNombre())
 						&& p1.getTipo().equals(p2.getTipo()) && p1.getPrecio() == p2.getPrecio())
 					p2.setStock(p2.getStock() + p1.getStock());
 			}
 		}
-		if(!lista.contains(p1))
+		if (!lista.contains(p1))
 			lista.add(p1);
 	}
 
@@ -85,10 +83,11 @@ public class Gestion_productos {
 	}
 
 	void eliminarSinStock() {
-		for (Producto p : lista) {
-			if (p.getStock() == 0) {
-				lista.remove(p);
-			}
+		Iterator<Producto> it2 = lista.iterator();
+		while (it2.hasNext()) {
+			if (it2.next().getStock() == 0)
+				it2.remove();
 		}
+
 	}
 }
