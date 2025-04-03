@@ -15,14 +15,19 @@ public class Gestion_productos {
 	void eliminar(int cod) {
 
 		Iterator<Producto> it = lista.iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			if (it.next().getCodigo() == cod)
 				it.remove();
 		}
 	}
 
-	void obtener(int cod) {
-		System.out.println(cod);
+	Producto obtener(int cod) {
+		for(Producto p: lista) 
+		{
+			if(p.getCodigo() == cod)
+				return p;
+		}
+		return null;
 	}
 
 	Producto buscar(int cod) {
@@ -36,27 +41,54 @@ public class Gestion_productos {
 		return null;
 
 	}
-	
-	ArrayList buscar(String tipo) 
-	{
+
+	ArrayList buscar(String tipo) {
 		ArrayList<Producto> listatip = new ArrayList<>();
-		for (Producto p : lista){
-			if(p.getTipo().equals(tipo)) 
-			{
+		for (Producto p : lista) {
+			if (p.getTipo().equals(tipo)) {
 				listatip.add(p);
 			}
 		}
 		return listatip;
 	}
-	
-	void tamaño() 
-	{
+
+	void tamanio() {
 		System.out.println(lista.size());
 	}
-	
-	void agregarSinDuplicados() 
-	{
-		
+
+	void agregarSinDuplicados(Producto p1) throws DatosExcepcion {
+		for (Producto p2 : lista) {
+			if (p1.getCodigo() == p2.getCodigo()) {
+				if (!p1.getNombre().equals(p2.getNombre())
+					&& !p1.getTipo().equals(p2.getTipo()))
+					throw new DatosExcepcion("producto erroneo");
+				
+				else if (p1.getCodigo() == p2.getCodigo() && p1.getPrecio() != p2.getPrecio()) {
+					p2.setPrecio(p1.getPrecio());
+					p2.setStock(p2.getStock()+p1.getStock());
+					
+				} else if (p1.getCodigo() == p2.getCodigo() && p1.getNombre().equals(p2.getNombre())
+						&& p1.getTipo().equals(p2.getTipo()) && p1.getPrecio() == p2.getPrecio())
+					p2.setStock(p2.getStock() + p1.getStock());
+			}
+		}
+		if(!lista.contains(p1))
+			lista.add(p1);
 	}
 
+	void aumentarPrecio(String tipo, double porcentaje) {
+		for (Producto p : lista) {
+			if (p.getTipo().equals(tipo)) {
+				p.setPrecio(p.getPrecio() + p.getPrecio() * porcentaje / 100);
+			}
+		}
+	}
+
+	void eliminarSinStock() {
+		for (Producto p : lista) {
+			if (p.getStock() == 0) {
+				lista.remove(p);
+			}
+		}
+	}
 }

@@ -9,7 +9,7 @@ public class Producto {
 	private String nombre;
 	private String tipo;
 	private double precio;
-	private static int stock;
+	private int stock;
 
 	Producto(int codigo, String nombre, String tipo, double precio, int stock) {
 
@@ -60,6 +60,13 @@ public class Producto {
 		this.stock = stock;
 	}
 
-	
+	public boolean equals(Object o) 
+	{
+		if(this.codigo==((Producto)o).getCodigo() && this.nombre.equals(((Producto)o).getNombre()) 
+				&& this.precio == (((Producto)o).getPrecio()) && this.tipo.equals(((Producto)o).getTipo()))
+				return true;
+				else
+					return false;
+	}
 	
 }
