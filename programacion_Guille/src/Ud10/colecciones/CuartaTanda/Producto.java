@@ -13,11 +13,11 @@ public class Producto {
 
 	Producto(int codigo, String nombre, String tipo, double precio, int stock) {
 
-		codigo= this.codigo;
-		nombre = this.nombre;
-		tipo = this.tipo;
-		precio = this.precio;
-		stock = this.stock;
+		this.codigo =codigo;
+		this.nombre =nombre;
+		this.tipo=tipo;
+		this.precio=precio;
+		this.stock=stock;
 	}
 
 	public int getCodigo() {

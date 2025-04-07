@@ -15,21 +15,20 @@ public abstract class Vehiculos {
 		this.añoFabricacion = añoFabricacion;
 	}
 
-	void alquilarVehiculo() throws alquilerException 
-	{
-		if(this.disponible == false)
+	void alquilarVehiculo() throws alquilerException {
+		if (this.disponible == false)
 			throw new alquilerException("el coche se encuentra alquilado");
 		else
-			this.disponible = false; 
+			this.disponible = false;
 	}
-	void devolverVehiculo() throws alquilerException 
-	{
-		if(this.disponible == true)
+
+	void devolverVehiculo() throws alquilerException {
+		if (this.disponible == true)
 			throw new alquilerException("el coche no se encuentra alquilado");
 		else
 			this.disponible = true;
 	}
-	
+
 	public String getMatricula() {
 		return matricula;
 	}
@@ -75,7 +74,5 @@ public abstract class Vehiculos {
 		return "Vehiculos [matricula=" + matricula + ", marca=" + marca + ", modelo=" + modelo + ", añoFabricacion="
 				+ añoFabricacion + ", disponible=" + disponible + "]";
 	}
-	
-	
 
 }
