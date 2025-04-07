@@ -10,5 +10,5 @@ public static void main(String[] args) {
 	lista.lista.add(entrada.next());
 	
 	System.out.println(lista.lista);
-}
+} 
 }

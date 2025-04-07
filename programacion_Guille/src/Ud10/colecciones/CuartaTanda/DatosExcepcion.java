@@ -4,6 +4,6 @@ public class DatosExcepcion extends Exception {
 
 	DatosExcepcion(String msg)
 	{
-		super(msg);
+		super(msg);  
 	}
 }

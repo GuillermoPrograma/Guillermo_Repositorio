@@ -15,7 +15,7 @@ public class listaTareas {
 		agregarTarea(entrada.next());
 		insertarPosicion(entrada.nextInt(), entrada.next());
 		System.out.println(lista);
-		ordenarAlfabeticamente();
+		ordenarAlfabeticamente(); 
 		System.out.println(lista);
 		ordenContrario();
 		System.out.println(lista);

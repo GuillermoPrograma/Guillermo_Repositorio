@@ -13,6 +13,6 @@ public class Ejercicio2 {
 			lista.remove(Integer.valueOf(5));
 		}
 		System.out.println(lista); 
-	}
+	} 
 
 }

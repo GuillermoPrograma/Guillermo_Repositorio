@@ -9,7 +9,7 @@ public class listaCompra {
 		List <String>lista = new ArrayList<>();
 		List <String>lista2 = new ArrayList<>();
 		
-		lista.add("Caramelos");
+		lista.add("Caramelos"); 
 		lista.add("Pollo");
 		lista.add("Jamon");
 		

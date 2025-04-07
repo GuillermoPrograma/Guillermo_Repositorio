@@ -20,7 +20,7 @@ public class Ejercicio4 {
 			Integer num;
 			while(it.hasNext()) {
 				num = it.next();
-				if(!lista2.contains(num))
+				if(!lista2.contains(num)) 
 					lista2.add(num);
 				
 			}

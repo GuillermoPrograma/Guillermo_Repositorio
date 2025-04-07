@@ -10,7 +10,7 @@ public class Gestion_productos {
 
 	void agregar(Producto pr) {
 		lista.add(pr);
-	}
+	} 
 
 	void eliminar(int cod) {
 

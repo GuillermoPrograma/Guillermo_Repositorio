@@ -14,7 +14,7 @@ public class Ejercicio1 {
 		while ((valor=entrada.nextInt()) != -1) {
 			if(valor > 0)
 			lista.add(valor);
-		}
+		} 
 		if (valor == -1) {
 
 			for (int i = 0; i < lista.size(); i++) {

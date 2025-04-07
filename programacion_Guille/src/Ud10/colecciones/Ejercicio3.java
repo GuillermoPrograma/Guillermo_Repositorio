@@ -21,7 +21,7 @@ public class Ejercicio3 {
 			lista2.add(lista.get(i));
 		
 			
-		}
+		} 
 		
 		System.out.println(lista);
 		System.out.println("--------------------");

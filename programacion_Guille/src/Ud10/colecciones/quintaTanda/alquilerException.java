@@ -4,7 +4,7 @@ public class alquilerException extends Exception {
 
 	alquilerException(String msg)
 	{
-		super(msg);
+		super(msg); 
 	}
 	
 }

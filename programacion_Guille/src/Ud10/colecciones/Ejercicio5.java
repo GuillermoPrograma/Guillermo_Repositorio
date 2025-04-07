@@ -20,7 +20,7 @@ public class Ejercicio5 {
 			{
 				lista.add(num);
 			}
-			if(num < 0) 
+			if(num < 0)  
 			{
 				lista2.add(num);
 			}
