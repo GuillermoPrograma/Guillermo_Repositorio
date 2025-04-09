@@ -15,7 +15,14 @@ public class Ejercicio2_Listas {
 	}
 	void insertarPosicionEspecifica(int posicion, String nombre) 
 	{
-		
+		lista.add(posicion, nombre);
+	}
+	void modificarNombreEstudiante(int indice, String nombre) 
+	{
+		lista.set(indice, nombre);
+	}
+	void eliminar() 
+	{
 		
 	}
 }

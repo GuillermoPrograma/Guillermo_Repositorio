@@ -14,7 +14,7 @@ public class Ejercicio1_PedirNombresPorConsola {
 			PrintWriter bw = new PrintWriter(fw);
 			System.out.println("pon el primer nombre");
 			String nombres = entrada.next();
-
+			
 			while (!nombres.equalsIgnoreCase("fin")) {
 
 				bw.println(nombres);
@@ -25,7 +25,7 @@ public class Ejercicio1_PedirNombresPorConsola {
 			fw.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Archivo no encontrado");
 		}
 	
 	}
