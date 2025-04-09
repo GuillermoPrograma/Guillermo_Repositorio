@@ -3,9 +3,9 @@ package Ud10.colecciones.ColeccionDeDatos.TerceraTanda;
 public class Contactos {
 
 	private String nombre;
-	private int telefono;
+	private String telefono;
 	
-	public Contactos(String nombre, int telefono) {
+	public Contactos(String nombre, String telefono) {
 		this.nombre=nombre;
 		this.telefono=telefono;
 	}
@@ -15,11 +15,15 @@ public class Contactos {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public int getTelefono() {
+	public String getTelefono() {
 		return telefono;
 	}
-	public void setTelefono(int telefono) {
+	public void setTelefono(String telefono) {
 		this.telefono = telefono;
+	}
+	@Override
+	public String toString() {
+		return "Contactos [nombre=" + nombre + ", telefono=" + telefono + "]";
 	}
 	
 	
