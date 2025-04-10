@@ -22,7 +22,7 @@ public class AgendadeContactos {
 
 			if (br.readLine() == null) {
 
-				pw.println("Nombes,Teléfonos");
+				pw.println("Nombres,Teléfonos");
 				System.out.println("Nombre: ");
 				pw.print(entrada.next() + ",");
 				System.out.println("Teléfono: ");
