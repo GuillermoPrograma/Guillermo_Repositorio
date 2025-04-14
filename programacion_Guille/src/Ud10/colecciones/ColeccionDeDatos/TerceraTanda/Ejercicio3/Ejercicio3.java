@@ -17,47 +17,39 @@ public class Ejercicio3 {
 
 			String[] palabra;
 			while ((linea = br.readLine()) != null) {
-				linea.replaceAll(" ", ",");
-				linea.replaceAll("\\s+", ",");
-				linea.replaceAll(".", ",");
-				linea.replaceAll("\n", ",");
-
-				linea.toLowerCase();
+				
+				linea = linea.replaceAll("[^a-zA-Z]", ",").toLowerCase();
 
 				palabra = linea.split(",");
 
-				for (int j = 0; j < linea.length(); j++) {
+				for (String p : palabra) {
+					if (p.isEmpty()) continue; //Esto es para mirar si las palabras estan vacias
+					boolean encontrada = false;
 
-					for (int i = 0; i < palabra.length; i++) {
-						if (!lista.contains(palabra[i])) {
-							lista.add(new Contador(palabra[i], 1));
-						} else {
-							for (Contador c : lista) {
-								if (c.getNombre().equals(palabra[i])) {
-									c.setNum(c.getNum() + 1);
-								}
-							}
+					for (Contador c : lista) {
+						if (c.getNombre().equals(p)) {
+							c.setNum(c.getNum() + 1);
+							encontrada = true;
 						}
+
+					}
+					if (encontrada == false) {
+						lista.add(new Contador(p, 1));
 					}
 				}
+
 			}
 
 			Contador max = new Contador("", 1);
 			for (Contador c : lista) {
-
+				System.out.println(c);
 				if (c.getNum() >= max.getNum()) {
 					max = c;
 				}
-				System.out.println(max.getNombre());
-				
+
 			}
-			//System.out.println(max);
-//			for (Contador c : lista) {
-//
-//				if (c.getNum() == max.getNum()) {
-//					System.out.println("la palabra más repetida es:" + c.getNombre() + " Se ha repetido: " + c.getNum() + " veces");
-//				}
-//			}
+			System.out.println(max.getNombre());
+			System.out.println(max.getNum());
 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
