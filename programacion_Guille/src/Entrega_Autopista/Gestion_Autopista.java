@@ -11,25 +11,32 @@ public class Gestion_Autopista {
 
 	public static void main(String[] args) {
 		Terminal tMenorCola = null;
-		int minCola = 999;
+		boolean asignado = false;
 		listaTerminal.add(new Terminal(Tipo.camiones));
 		listaTerminal.add(new Terminal(Tipo.autobuses));
 		for (int i = 0; i < 5; i++) {
 			listaTerminal.add(new Terminal(Tipo.ambos));
 		}
-
-		while (tiempoActual != tiempoTotal) {
+		int contador = 0;
+		while (contador < 30) {
 			Vehiculo v = vehiculoLlega();
 			int menorCola = 999;
-			
+			for (Terminal t : listaTerminal) 
+			{
+				if(t != null)
+				t.sumamosContador();   
+			}
 			for (Terminal t : listaTerminal) {
 
-				if (t.getTipo() == Tipo.autobuses && v.getTipo() == Tipo.autobuses
-						|| v.getTipo() == Tipo.camiones && t.getTipo() == Tipo.camiones) {
+				if (t.getTipo() == Tipo.autobuses && v.getTipo() == Tipo.autobuses 
+					|| t.getTipo() == Tipo.camiones && v.getTipo() == Tipo.camiones) {
 					t.añadirVehiculoCola(v);
+					asignado = true;
 					break;
 				} else {
-					if(menorCola > t.getListaPendiente().size()) 
+					if(menorCola > t.getListaPendiente().size() 
+						&& t.getTipo() != Tipo.autobuses &&
+						t.getTipo() != Tipo.camiones) 
 					{
 						menorCola = t.getListaPendiente().size();
 						tMenorCola = t;
@@ -38,16 +45,19 @@ public class Gestion_Autopista {
 
 					}
 				}
-			if(tMenorCola != null) 
+			if(tMenorCola != null && asignado == false) 
 			{
 				tMenorCola.añadirVehiculoCola(v);
 			}
+			contador++;
+			asignado = false;
 			}
 			
 			for (Terminal t2 : listaTerminal) {
 				System.out.println(t2);
-				System.out.println("terminal");
+				
 			}
+			
 		}
 	
 
