@@ -1,0 +1,4 @@
+Nombres|Notas
+Guille|8
+David|6
+Maria|4
