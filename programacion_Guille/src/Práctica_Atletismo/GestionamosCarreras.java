@@ -21,13 +21,13 @@ public class GestionamosCarreras {
 			
 		} catch (edadExcepcion e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+		System.err.println(e.getMessage());
 		} catch (CarreraNoPerdimitidaException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.err.println(e.getMessage());
 		} catch (CorredorNoCorreAquiException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.err.println(e.getMessage());
 		}
 
 	}
